@@ -93,7 +93,7 @@ const headHeight = 20
 const fromLevel = 1
 const toLevel = 1000
 
-canvas.width = 60
+canvas.width = 37
 
 const numberOfTicks = toLevel - fromLevel + 1
 canvas.height = headHeight + (numberOfTicks * tickWidth + (numberOfTicks - 1) * gapBetweenTicks) + footHeight
