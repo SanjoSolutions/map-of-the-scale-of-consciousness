@@ -160,7 +160,7 @@ function renderValue(entry) {
   const box = document.createElement('div')
   box.textContent = entry.name
   box.style.position = 'absolute'
-  const y = -3 + headHeight + (1000 - entry.level.value) * (gapBetweenTicks + tickWidth)
+  const y = -1 + headHeight + (1000 - entry.level.value) * (gapBetweenTicks + tickWidth)
   const height = 18
   box.style.left = `${ determineNextX(y, height) }px`
   box.style.top = `${ y }px`
