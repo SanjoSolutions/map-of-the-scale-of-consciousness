@@ -64,6 +64,22 @@ const data = [
     level: at(405),
     name: 'rational (positive personality trait)',
   },
+  {
+    level: at(200),
+    name: 'honesty'
+  },
+  {
+    level: at(200),
+    name: 'integrity'
+  },
+  {
+    level: at(540),
+    name: 'devotional acts'
+  },
+  {
+    level: at(850),
+    name: "to surrender (at depth) one's will to God"
+  }
 ]
 
 const canvas = document.getElementById('canvas')
