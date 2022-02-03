@@ -192,8 +192,8 @@ function determineNextX(y, height) {
       const elementStartY = element.offsetTop
       const elementEndY = elementStartY + element.clientHeight
       return (
-        (elementStartY <= y && elementEndY <= endY) ||
-        (elementStartY >= y && elementEndY >= endY) ||
+        (elementStartY <= y && elementEndY >= y && elementEndY <= endY) ||
+        (elementStartY >= y && elementStartY <= endY && elementEndY >= endY) ||
         (elementStartY <= y && elementEndY >= endY) ||
         (elementStartY >= y && elementEndY <= endY)
       )
