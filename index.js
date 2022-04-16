@@ -167,7 +167,7 @@ function renderEntry(entry) {
 function renderValue(entry) {
   const box = document.createElement('div')
   box.textContent = entry.name
-  box.style.position = 'absolute'
+  box.classList.add('value')
   const y = -2 + headHeight + (1000 - entry.level.value) * (gapBetweenTicks + tickWidth)
   const height = 18
   box.style.left = `${ determineNextX(y, height) }px`
@@ -179,17 +179,12 @@ function renderValue(entry) {
 function renderInterval(entry) {
   const box = document.createElement('div')
   box.textContent = entry.name
-  box.style.boxSizing = 'border-box'
-  box.style.position = 'absolute'
-  box.style.border = '1px solid black'
-  box.style.padding = '0.5rem'
+  box.classList.add('interval')
   const y = 8 + headHeight + (1000 - entry.level.to) * (gapBetweenTicks + tickWidth)
   const height = (entry.level.to - entry.level.from) * (gapBetweenTicks + tickWidth) + 1
   box.style.left = `${ determineNextX(y, height) }px`
   box.style.top = `${ y }px`
   box.style.height = `${ height }px`
-  box.style.display = 'flex'
-  box.style.alignItems = 'center'
   box.title = entry.name + ': ' + convertLevelToString(entry.level)
   document.body.appendChild(box)
 }
