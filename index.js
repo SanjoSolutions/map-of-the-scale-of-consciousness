@@ -113,23 +113,31 @@ function drawScale() {
 }
 
 function drawArrow() {
-  context.moveTo(offsetX + 5, 0)
-  context.lineTo(offsetX + 0, 9)
-  context.moveTo(offsetX + 5, 0)
-  context.lineTo(offsetX + 10, 9)
+  context.moveTo(offsetX + 5.5, 0)
+  context.lineTo(offsetX + 0.5, 9)
+  context.moveTo(offsetX + 5.5, 0)
+  context.lineTo(offsetX + 10.5, 9)
 }
 
 function drawBody() {
-  context.moveTo(offsetX + 5, canvas.height - 2)
-  context.lineTo(offsetX + 5, 0)
+  context.fillRect(
+    offsetX + 5,
+    0,
+    1,
+    canvas.height - 2
+  )
 
   const from = headHeight
   const to = canvas.height - 1 - footHeight
 
   for (let i = 0; to - i * (gapBetweenTicks + tickWidth) >= from; i++) {
     const y = to - i * (gapBetweenTicks + tickWidth)
-    context.moveTo(offsetX + 3, y)
-    context.lineTo(offsetX + 7, y)
+    context.fillRect(
+      offsetX + 3,
+      y,
+      5,
+      1
+    )
     const text = String(fromLevel + i)
     const textMetrics = context.measureText(text)
     const actualHeight = textMetrics.actualBoundingBoxAscent + textMetrics.actualBoundingBoxDescent
@@ -160,7 +168,7 @@ function renderValue(entry) {
   const box = document.createElement('div')
   box.textContent = entry.name
   box.style.position = 'absolute'
-  const y = -1 + headHeight + (1000 - entry.level.value) * (gapBetweenTicks + tickWidth)
+  const y = -2 + headHeight + (1000 - entry.level.value) * (gapBetweenTicks + tickWidth)
   const height = 18
   box.style.left = `${ determineNextX(y, height) }px`
   box.style.top = `${ y }px`
@@ -174,8 +182,8 @@ function renderInterval(entry) {
   box.style.position = 'absolute'
   box.style.border = '1px solid black'
   box.style.padding = '0.25rem'
-  const y = 7 + headHeight + (1000 - entry.level.to) * (gapBetweenTicks + tickWidth)
-  const height = (entry.level.to - entry.level.from) * (gapBetweenTicks + tickWidth) - 8
+  const y = 8 + headHeight + (1000 - entry.level.to) * (gapBetweenTicks + tickWidth)
+  const height = (entry.level.to - entry.level.from) * (gapBetweenTicks + tickWidth) - 9
   box.style.left = `${ determineNextX(y, height) }px`
   box.style.top = `${ y }px`
   box.style.height = `${ height }px`
