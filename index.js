@@ -141,7 +141,7 @@ function drawBody() {
     const text = String(fromLevel + i)
     const textMetrics = context.measureText(text)
     const actualHeight = textMetrics.actualBoundingBoxAscent + textMetrics.actualBoundingBoxDescent
-    context.fillText(text, offsetX - textMetrics.width, y + Math.floor(0.5 * actualHeight))
+    context.fillText(text, offsetX - textMetrics.width - 2, y + Math.floor(0.5 * actualHeight))
   }
 }
 
